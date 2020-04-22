@@ -10,7 +10,10 @@ int main()
 	char	*line;
 	int		status;
 
-	fd = open("tester.txt", O_RDONLY);
+//	fd = 0;
+//	fd = 42;
+//	fd = open("tester.txt", O_RDONLY);
+	fd = open("verylongline.txt", O_RDONLY);
 	while ((status = get_next_line(fd, &line)))
 	{
 		if (status == -1)
