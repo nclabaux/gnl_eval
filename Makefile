@@ -2,20 +2,20 @@ BUFFER_SIZE = BUFFER_SIZE=32
 
 NAME = tester
 
-SRCS = ./get_next_line.c\
-	   ./get_next_line_utils.c\
+SRCS = ../get_next_line.c\
+	   ../get_next_line_utils.c\
 	   main.c
 
 OBJS = $(SRCS:.c=.o)
 
-CC = cc
+CC = gcc
 
 RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror -D $(BUFFER_SIZE)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -c $(NAME) -o $(OBJS) 
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) 
 	
 all: $(NAME)
 
