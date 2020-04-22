@@ -15,8 +15,8 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -D $(BUFFER_SIZE)
 
 $(NAME): $(OBJS)
-	$(CC) -o $(NAME) $(OBJS) $(CFLAGS)
-
+	$(CC) $(CFLAGS) -c $(NAME) -o $(OBJS) 
+	
 all: $(NAME)
 
 clean:
