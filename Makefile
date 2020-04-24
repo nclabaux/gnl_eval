@@ -1,4 +1,4 @@
-BUFFER_SIZE = BUFFER_SIZE=32
+BUFFER_SIZE = 32
 
 NAME = tester
 
@@ -12,7 +12,7 @@ CC = gcc
 
 RM = rm -f
 
-CFLAGS = -Wall -Wextra -Werror -D $(BUFFER_SIZE)
+CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=$(BUFFER_SIZE)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) 

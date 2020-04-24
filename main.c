@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include "../get_next_line.h"
 
-int main()
+int main(int argc, char **argv)
 {
 	int 	fd;
 	char	*line;
@@ -12,12 +12,14 @@ int main()
 
 //	fd = 0;
 //	fd = 42;
-//	fd = open("tester.txt", O_RDONLY);
-	fd = open("verylongline.txt", O_RDONLY);
+	fd = open(argv[1], O_RDONLY);
 	while ((status = get_next_line(fd, &line)))
 	{
 		if (status == -1)
+		{
+			printf("%d\t%s\n", status, line);
 			exit(0);
+		}
 		printf("%d\t%s\n", status, line);
 		free(line);
 	}
