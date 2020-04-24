@@ -10,9 +10,10 @@ int main(int argc, char **argv)
 	char	*line;
 	int		status;
 
-//	fd = 0;
+	fd = 0;
 //	fd = 42;
-	fd = open(argv[1], O_RDONLY);
+	if (argc > 1)
+		fd = open(argv[1], O_RDONLY);
 	while ((status = get_next_line(fd, &line)))
 	{
 		if (status == -1)
