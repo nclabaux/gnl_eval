@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 	int		status;
 
 	fd = 0;
-//	fd = 42;
+	fd = 42;
 	if (argc > 1)
 		fd = open(argv[1], O_RDONLY);
 	while ((status = get_next_line(fd, &line)))
