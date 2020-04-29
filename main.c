@@ -26,5 +26,7 @@ int main(int argc, char **argv)
 	}
 	printf("%d\t%s\n", status, line);
 	free(line);
+	if (argc > 2)
+		system("leaks tester");
 	return (0);
 }
